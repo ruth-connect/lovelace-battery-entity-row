@@ -124,11 +124,8 @@
 
         getBatteryLevel(attribute) {
             let batteryValue = this.stateObj.state;
-            if (this.stateObj.attributes.battery) batteryValue = this.stateObj.attributes.battery;
-            // if (this.stateObj.attributes.battery_level) batteryValue = this.stateObj.attributes.battery_level;
-            if (this.stateObj.attributes[attribute]) batteryValue = this.stateObj.attributes[attribute];
             return !isNaN(parseFloat(batteryValue)) && isFinite(batteryValue)
-                ? Math.round(parseInt(batteryValue, 10)) : batteryValue;
+                ? Math.round(parseInt(batteryValue, 10)) : "Not a Number";
         }
 
         getChargingState(chargingConfig) {
